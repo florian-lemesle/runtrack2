@@ -29,7 +29,7 @@
 
 <?php
 
-function split($str){
+function split($str){ //séparer les mots d'une phrase et les mettres dans une liste
 
     $split = [];
     $word = "";
@@ -54,7 +54,7 @@ function split($str){
     }
     
     
-function gras($str){
+function gras($str){ 
         
   $array = split($str);
   $maj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -114,7 +114,7 @@ function cesar($str, $decalage = 2){
     
 }
 
-function len($str)
+function len($str) // compte le nombre de lettres dans un mot
 {
       $i = 0;
       while (isset($str[$i]))
@@ -129,7 +129,7 @@ function plateforme($str){
   $n = len($str);
   $array = split($str);
   $result = $results = "";
-  
+
 
   for($i=0; isset($array[$i]); $i++){
 
@@ -176,5 +176,3 @@ if (isset($_GET["str"]))
   
 </body>
 </html>
-
-
