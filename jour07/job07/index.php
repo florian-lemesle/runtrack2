@@ -126,25 +126,39 @@ function len($str) // compte le nombre de lettres dans un mot
 
 function plateforme($str){
   
-  $n = len($str);
   $array = split($str);
   $result = $results = "";
+  $condition = false;
 
 
   for($i=0; isset($array[$i]); $i++){
 
     for($j=0; isset($array[$i][$j]); $j++){
 
-      if ($array[$i][$j-$n] == "e"){
+      if ($array[$i][len($array[$i])-1] == "e"){
 
-        $result = $array[$i] . "_";
+        $condition = true;
 
         break;
+
       }
+
+      elseif ($array[$i][len($array[$i])-2] == "m" and $condition == true){
+
+        $result = $results . " " . $array[$i] . "_";
+
+        break;
+
+      }
+
+      else
+
+      $result = $results . " " . $array[$i];
+      $condition = false;
 
     }
 
-    $results = $results . $result;
+    $results = $result;
 
   }
 
